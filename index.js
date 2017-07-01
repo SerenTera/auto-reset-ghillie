@@ -1,7 +1,7 @@
 const templateID=[81342,81341],//templateID, I only logged 81342, i guess 81341 is for easy mode ghillie?
 	huntingzoneID=[713],//zoneId, not really needed, just put in case bhs does a new shitty dungeon where it doesnt auto reset >.>
-	noresetzones=[9713],//zones where no resetting is carried out, this is incase you dc before getting reward. 9713=ghillie. Add other zoneId if you add more dungeons to this mod.
-	Command = require('command');
+	noresetzones=[9713];//zones where no resetting is carried out, this is incase you dc before getting reward. 9713=ghillie. Add other zoneId if you add more dungeons to this mod.
+const Command = require('command');
 	
 module.exports = function resetdungeon(dispatch) {
 	let finishdungeon;

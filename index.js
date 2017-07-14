@@ -5,22 +5,22 @@ const Command = require('command');
 	
 module.exports = function resetdungeon(dispatch) {
 	let finishdungeon;
-	const command = Command(dispatch);
+	const command = Command(dispatch)
 	
 	dispatch.hook('S_LOAD_TOPO', 1, (event) => {      
 		if(noresetzones.includes(event.zone)===false && finishdungeon) {
-			dispatch.toServer('C_RESET_ALL_DUNGEON',1,{});
-			finishdungeon=false;
-			command.message('Reseted Dungeons');
-		};	
-    });
+			dispatch.toServer('C_RESET_ALL_DUNGEON',1,{}),
+			finishdungeon=false,
+			command.message('Reseted Dungeons')
+		}
+    })
 	
 	dispatch.hook('S_SPAWN_NPC',3,(event) => { 
 		if(event.huntingZoneId===713 && templateID.includes(event.templateId)) {
-			finishdungeon=true;
-		};
-	});
-};
+			finishdungeon=true
+		}
+	})
+}
 
 //templateID should be npcs such as exit teleportals/reward chest that appears on dungeon completion or if not possible, final boss
 

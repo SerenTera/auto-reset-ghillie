@@ -16,9 +16,8 @@ module.exports = function resetdungeon(dispatch) {
     })
 	
 	dispatch.hook('S_SPAWN_NPC',3,(event) => { 
-		if(event.huntingZoneId===713 && templateID.includes(event.templateId)) {
-			finishdungeon=true
-		}
+		if(event.huntingZoneId===713 && templateID.includes(event.templateId))
+			finishdungeon=true;
 	})
 }
 
@@ -26,4 +25,4 @@ module.exports = function resetdungeon(dispatch) {
 
 //If in the future bhs adds a solo dungeon that does not auto resets on completion, 
 //add the exitteleportal/rewardchest/last boss templateID+huntingzoneID to the respective arrays and then replace line 19 with this line:
-//if(huntingzoneID.includes(event.huntingZoneId) && templateID.includes(event.templateId)) {
+//if(huntingzoneID.includes(event.huntingZoneId) && templateID.includes(event.templateId))
